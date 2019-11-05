@@ -1,22 +1,25 @@
 <?php
 
-require 'Car.php';
-$car = new Car('green', 4, 'electric');
-echo $car->forward();
-var_dump($car);
-var_dump(Car::ALLOWED_ENERGIES);
+require_once 'Bike.php';
+require_once 'Car.php';
+require_once 'MotorWay.php';
+require_once 'PedestrianWay.php';
+require_once 'ResidentialWay.php';
+require_once 'Skateboard.php';
+require_once 'Truck.php';
+
+$car = new Car('pink', 5, 'electric');
+
+$MotorWayRoad = new MotorWay();
+var_dump($MotorWayRoad);
+
+$MotorWayRoad->addVehicle($car);
+var_dump($MotorWayRoad);
 
 
-require 'Bike.php';
-$bike = new Bike('blue', 1);
-echo $bike->forward();
-var_dump($bike);
+$PedestrianWayRoad = new PedestrianWay();
+var_dump($PedestrianWayRoad);
 
 
-require 'Truck.php';
-$truck = new Truck('red', 2, 'fuel');
-echo $truck->forward();
-var_dump($truck);
-var_dump(Truck::ALLOWED_ENERGIES);
-echo $truck->isFull();
-
+$ResidentialWayRoad = new ResidentialWay();
+var_dump($ResidentialWayRoad);
